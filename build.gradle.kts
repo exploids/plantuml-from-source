@@ -16,17 +16,19 @@ dependencies {
     implementation("com.thoughtworks.qdox:qdox:2.0.0")
 }
 
-gradlePlugin {
-    plugins {
-        create("plantUmlFromSource") {
-            id = "com.exploids.plantumlfromsource"
-            implementationClass = "com.exploids.plantumlfromsource.gradle.PlantUmlPlugin"
-        }
-    }
-}
-
 pluginBundle {
     website = "https://github.com/exploids/plantuml-from-source"
     vcsUrl = "https://github.com/exploids/plantuml-from-source"
     tags = listOf("plantuml", "uml", "diagram")
+}
+
+gradlePlugin {
+    plugins {
+        create("plantUmlFromSource") {
+            id = "com.exploids.plantumlfromsource"
+            displayName = "PlantUML from source"
+            description = "A plugin that generates PlantUML class diagrams from java source files"
+            implementationClass = "com.exploids.plantumlfromsource.gradle.PlantUmlPlugin"
+        }
+    }
 }
