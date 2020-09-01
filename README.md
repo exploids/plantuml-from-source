@@ -1,6 +1,6 @@
 # PlantUML from source
 
-A simple Gradle plugin that generates PlantUML class diagrams from java source files.
+A simple Gradle plugin that generates PlantUML class diagrams from Java source files.
 It uses [QDox](https://github.com/paul-hammant/qdox) to parse the source files.
 
 This plugin is **not ready for production**.
@@ -49,7 +49,7 @@ The minimum visibility for classes, methods and fields to be included in the dia
 
 Allowed values: `"public"`, `"protected"`, `"package private"`, `"private"`
 
-*Default value: `"public"`
+*Default value*: `"public"`
 
 #### `associationFieldVisibility`
 
