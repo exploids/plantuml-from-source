@@ -1,6 +1,6 @@
 plugins {
     `java-gradle-plugin`
-    id("com.gradle.plugin-publish") version "0.10.1"
+    id("com.gradle.plugin-publish") version "0.12.0"
     kotlin("jvm") version "1.3.72"
 }
 
@@ -19,15 +19,20 @@ dependencies {
 pluginBundle {
     website = "https://github.com/exploids/plantuml-from-source"
     vcsUrl = "https://github.com/exploids/plantuml-from-source"
+    description = "A plugin that generates PlantUML class diagrams from java source files"
     tags = listOf("plantuml", "uml", "diagram")
+
+    plugins {
+        create("plantUmlFromSource") {
+            displayName = "PlantUML from source"
+        }
+    }
 }
 
 gradlePlugin {
     plugins {
         create("plantUmlFromSource") {
             id = "com.exploids.plantumlfromsource"
-            displayName = "PlantUML from source"
-            description = "A plugin that generates PlantUML class diagrams from java source files"
             implementationClass = "com.exploids.plantumlfromsource.gradle.PlantUmlPlugin"
         }
     }
