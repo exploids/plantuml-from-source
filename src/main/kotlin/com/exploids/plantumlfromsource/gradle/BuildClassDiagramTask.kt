@@ -1,4 +1,4 @@
-package com.exploids.plantumlfromsource
+package com.exploids.plantumlfromsource.gradle
 
 import com.thoughtworks.qdox.JavaProjectBuilder
 import com.thoughtworks.qdox.model.JavaClass

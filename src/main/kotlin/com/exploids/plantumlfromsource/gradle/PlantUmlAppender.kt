@@ -1,7 +1,7 @@
-package com.exploids.plantumlfromsource
+package com.exploids.plantumlfromsource.gradle
 
-import com.exploids.plantumlfromsource.model.Association
-import com.exploids.plantumlfromsource.model.AssociationType
+import com.exploids.plantumlfromsource.gradle.model.Association
+import com.exploids.plantumlfromsource.gradle.model.AssociationType
 import com.thoughtworks.qdox.model.*
 
 /**

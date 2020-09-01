@@ -1,4 +1,4 @@
-package com.exploids.plantumlfromsource.model
+package com.exploids.plantumlfromsource.gradle.model
 
 /**
  *

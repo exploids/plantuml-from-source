@@ -1,5 +1,6 @@
-package com.exploids.plantumlfromsource
+package com.exploids.plantumlfromsource.gradle
 
+import com.exploids.plantumlfromsource.gradle.model.*
 import com.exploids.plantumlfromsource.model.*
 import com.thoughtworks.qdox.model.*
 

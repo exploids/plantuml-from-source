@@ -1,4 +1,4 @@
-package com.exploids.plantumlfromsource
+package com.exploids.plantumlfromsource.gradle
 
 import org.gradle.api.tasks.SourceSet
 import java.io.File
