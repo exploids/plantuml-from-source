@@ -5,9 +5,9 @@ package com.exploids.plantumlfromsource.gradle
  *
  * @author Luca Selinski
  */
-class Name(val parts: List<String>) {
+data class Name(val parts: List<String>) {
     fun isChildOf(other: Name): Boolean {
-        if (parts.size < other.parts.size) {
+        if (parts.size <= other.parts.size) {
             return false
         } else {
             for (index in other.parts.indices) {

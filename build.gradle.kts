@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.exploids"
-version = "0.1.0"
+version = "0.1.1"
 
 repositories {
     mavenCentral()
@@ -14,6 +14,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("com.thoughtworks.qdox:qdox:2.0.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
 }
 
 pluginBundle {
@@ -36,4 +37,8 @@ gradlePlugin {
             implementationClass = "com.exploids.plantumlfromsource.gradle.PlantUmlPlugin"
         }
     }
+}
+
+tasks.test {
+    useJUnitPlatform()
 }

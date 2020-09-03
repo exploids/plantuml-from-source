@@ -8,6 +8,7 @@ import org.gradle.api.tasks.TaskAction
 import javax.inject.Inject
 
 /**
+ * A task that generates a PlantUML class diagram.
  *
  * @author Luca Selinski
  */
@@ -31,7 +32,9 @@ open class BuildClassDiagramTask @Inject constructor(
         val associationMethodVisibility = extension.associationMethodVisibility?.toVisibility()
 
         val builder = JavaProjectBuilder()
-        builder.addSourceTree(sourceSet.allJava.sourceDirectories.singleFile)
+        val sourceTree = sourceSet.allJava.sourceDirectories.singleFile
+        logger.debug("using source tree {}", sourceTree)
+        builder.addSourceTree(sourceTree)
 
         val topLevelPackages = builder.packages.asSequence()
                 .filter { pack ->
@@ -39,12 +42,18 @@ open class BuildClassDiagramTask @Inject constructor(
                     builder.packages.asSequence().all { !firstName.isChildOf(nameOf(it.name)) }
                 }
                 .toList()
+        if (logger.isDebugEnabled) {
+            logger.debug("top level packages are {}", topLevelPackages.joinToString(", "))
+        }
 
         val knownClasses = topLevelPackages.asSequence()
                 .flatMap { classesInPackage(it) }
                 .filter { visibilityOf(it) within visibility }
                 .map { it.canonicalName }
                 .toSet()
+        if (logger.isDebugEnabled) {
+            logger.debug("known classes are {}", knownClasses.sorted().joinToString(", "))
+        }
 
         val associations = Associator(
                 topLevelPackages,
