@@ -32,9 +32,11 @@ open class BuildClassDiagramTask @Inject constructor(
         val associationMethodVisibility = extension.associationMethodVisibility?.toVisibility()
 
         val builder = JavaProjectBuilder()
-        val sourceTree = sourceSet.allJava.sourceDirectories.singleFile
-        logger.debug("using source tree {}", sourceTree)
-        builder.addSourceTree(sourceTree)
+        val sourceDirectories = sourceSet.allJava.sourceDirectories
+        sourceDirectories.files.forEach {
+            logger.debug("adding source directory {}", it)
+            builder.addSourceTree(it)
+        }
 
         val topLevelPackages = builder.packages.asSequence()
                 .filter { pack ->
