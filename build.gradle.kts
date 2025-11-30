@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("com.thoughtworks.qdox:qdox:2.0.0")
+    implementation("com.thoughtworks.qdox:qdox:2.2.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
 }
 

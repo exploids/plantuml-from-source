@@ -245,6 +245,7 @@ class PlantUmlAppender(
                     classe.isEnum -> "enum"
                     classe.isInterface -> "interface"
                     classe.isAbstract -> "abstract class"
+                    classe.isRecord -> "record"
                     else -> "class"
                 }
         )
