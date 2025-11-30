@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.exploids"
-version = "0.1.2"
+version = "0.2.0"
 
 repositories {
     mavenCentral()
@@ -41,4 +41,8 @@ gradlePlugin {
 
 tasks.test {
     useJUnitPlatform()
+    jvmArgs(
+        "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+        "--add-opens", "java.base/java.util=ALL-UNNAMED"
+    )
 }
